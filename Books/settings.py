@@ -137,14 +137,25 @@ WSGI_APPLICATION = "Books.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+DB_ENGINE =  get_value("DB_ENGINE")
+if DB_ENGINE == "sqlite3":
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
     }
-}
-
+elif DB_ENGINE == "postgres":
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': get_value("PG_NAME"),
+            'USER': get_value("PG_USER"),
+            'PASSWORD': get_value("PG_PASSWORD"),
+            'HOST': get_value("PG_HOST"),
+            'PORT': int(get_value("PG_PORT")),
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

@@ -11,7 +11,13 @@ Create config.json with the following content:
   "SECRET_KEY": "", #write something
   "REDIS_HOST": "localhost",
   "REDIS_PORT": "6379",
-  "HUEY_ENABLED": "0"
+  "HUEY_ENABLED": "0",
+  "DB_ENGINE":  "sqlite3", 
+  "PG_NAME": "",
+  "PG_USER": "",
+  "PG_PASSWORD": "",
+  "PG_HOST": "",
+  "PG_PORT": "5432"
 }
 ```
 
