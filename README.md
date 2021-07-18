@@ -28,8 +28,10 @@ Procfile when Redis is available:
 ```
 web: gunicorn Books.wsgi
 worker: python manage.py run_huey
+release: python manage.py migrate
 ```
 otherwise:
 ```
 web: gunicorn Books.wsgi
+release: python manage.py migrate
 ```
