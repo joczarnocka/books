@@ -13,7 +13,7 @@ class Book(models.Model):
     external_id = models.CharField(max_length=15, unique=True)
     title = models.CharField(max_length=300)
     authors = models.ManyToManyField(Author)
-    published_date = models.CharField(max_length=4)
+    published_date = models.CharField(max_length=10)
     categories = models.ManyToManyField(Category)
     average_rating = models.IntegerField(null=True)
     ratings_count = models.IntegerField(null=True)
