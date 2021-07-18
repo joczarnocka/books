@@ -74,7 +74,7 @@ HUEY = {
     "name": "data",
     "results": True,
     "store_none": False,
-    "immediate": False,
+    "immediate": not (get_value("HUEY_ENABLED", "0") == "1"),
     "utc": True,
     "blocking": True,
     "connection": {
